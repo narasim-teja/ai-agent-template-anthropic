@@ -67,7 +67,10 @@ npm run test
 
 Expected Test Results
 ```shell
-INPUT: {"method":"GET","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["Who are you?"]},"secret":{"anthropicApiKey":"YOUR_ANTHROPIC_KEY"},"headers":{}}
+> phat-gpt-template@0.0.1 test
+> tsx src/test.ts
+
+INPUT: {"method":"GET","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["Who are you?"]},"secret":{"anthropicApiKey":"ANTHROPIC_API_KEY"},"headers":{}}
 GET RESULT: {
   status: 200,
   body: '\n' +
@@ -81,7 +84,7 @@ GET RESULT: {
     '            <div align="center">\n' +
     '                <p>"Anthropic AI Agent Contract hosted on <a href="https://github.com/Phala-Network/ai-agent-template-anthropic">Phala Network</a>, an AI Coprocessor for hosting AI Agents."</p>\n' +
     '                <img src="https://i.imgur.com/8B3igON.png" width="600" alt="AI Agent Contract" />\n' +
-    "                <p>I am an AI assistant created by Anthropic to be helpful, harmless, and honest. I don't have a physical form or avatar - I'm a language model trained to engage in conversations and help with tasks. How can I assist you today?</p>\n" +
+    "                <p>I am an AI assistant created by Anthropic to be helpful, harmless, and honest. I don't have a physical body or avatar - I'm a language model trained to engage in conversations and help with tasks. How can I assist you today?</p>\n" +
     '            </div>\n' +
     '        </body>\n' +
     '    </html>',
@@ -90,41 +93,25 @@ GET RESULT: {
     'Access-Control-Allow-Origin': '*'
   }
 }
-
-
-INPUT: {"method":"POST","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["When did humans land on the moon?"]},"secret":{"anthropicApiKey":"YOUR_ANTHROPIC_KEY"},"headers":{},"body":"{\"untrustedData\":{\"fid\":2,\"url\":\"https://fcpolls.com/polls/1\",\"messageHash\":\"0xd2b1ddc6c88e865a33cb1a565e0058d757042974\",\"timestamp\":1706243218,\"network\":1,\"buttonIndex\":2,\"castId\":{\"fid\":226,\"hash\":\"0xa48dd46161d8e57725f5e26e34ec19c13ff7f3b9\"}},\"trustedData\":{\"messageBytes\":\"d2b1ddc6c88e865a33cb1a565e0058d757042974...\"}}"}
+INPUT: {"method":"POST","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["When did humans land on the moon?"]},"secret":{"anthropicApiKey":"ANTHROPIC_API_KEY"},"headers":{},"body":"{\"untrustedData\":{\"fid\":2,\"url\":\"https://fcpolls.com/polls/1\",\"messageHash\":\"0xd2b1ddc6c88e865a33cb1a565e0058d757042974\",\"timestamp\":1706243218,\"network\":1,\"buttonIndex\":2,\"castId\":{\"fid\":226,\"hash\":\"0xa48dd46161d8e57725f5e26e34ec19c13ff7f3b9\"}},\"trustedData\":{\"messageBytes\":\"d2b1ddc6c88e865a33cb1a565e0058d757042974...\"}}"}
 POST RESULT: {
   status: 200,
-  body: '\n' +
-    '    <!DOCTYPE html>\n' +
-    '    <html lang="en">\n' +
-    '        <head>\n' +
-    '            <meta charset="utf-8" />\n' +
-    '            <title>AI Agent Contract Demo UI</title>\n' +
-    '        </head>\n' +
-    '        <body>\n' +
-    '            <div align="center">\n' +
-    '                <p>"Anthropic AI Agent Contract hosted on <a href="https://github.com/Phala-Network/ai-agent-template-anthropic">Phala Network</a>, an AI Coprocessor for hosting AI Agents."</p>\n' +
-    '                <img src="https://i.imgur.com/8B3igON.png" width="600" alt="AI Agent Contract" />\n' +
-    '                <p>The first time humans landed on the moon was on July 20, 1969, during the Apollo 11 mission. American astronauts Neil Armstrong and Buzz Aldrin became the first humans to set foot on the lunar surface, while their colleague Michael Collins orbited the moon in the command module.\n' +
-    '\n' +
-    "After this initial landing, there were five more successful crewed moon landings as part of NASA's Apollo program:\n" +
-    '\n' +
-    '1. Apollo 12 - November 19, 1969\n' +
-    '2. Apollo 14 - February 5, 1971\n' +
-    '3. Apollo 15 - July 30, 1971\n' +
-    '4. Apollo 16 - April 21, 1972\n' +
-    '5. Apollo 17 - December 11, 1972\n' +
-    '\n' +
-    'Apollo 17 was the last crewed mission to land on the moon to date. Since then, no human has set foot on the lunar surface, although there have been numerous uncrewed missions to study the moon.</p>\n' +
-    '            </div>\n' +
-    '        </body>\n' +
-    '    </html>',
+  body: 'Not Implemented',
   headers: {
     'Content-Type': 'text/html; charset=UTF-8',
     'Access-Control-Allow-Origin': '*'
   }
 }
+
+To test in the SideVM playground go to https://phat.phala.network/contracts/view/0xf0a398600f02ea9b47a86c59aed61387e450e2a99cb8b921cd1d46f734e45409
+
+Connect you polkadot.js account and select 'run_js' with the parameters:
+- engine: SidevmQuickJSWithPolyfill
+- js_code: Source code text of dist/index.ts
+- args: {"method":"GET","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["When did humans land on the moon?"]},"secret":{"anthropicApiKey":"ANTHROPIC_API_KEY"},"headers":{}}
+Watch video here for to see the visual steps of testing in Sidevm playground: https://www.youtube.com/watch?v=fNqNeLfFFME
+
+Make sure to replace queries and secret with your values compatible with your AI Agent Contract.
 ```
 
 ### Publish Your AI Agent
@@ -135,9 +122,36 @@ npm run publish
 ```
 
 Upon a successful upload, the command should show the URL to access your AI Agent.
-> AI Agent deployed at: https://agents.phala.network/ipfs/QmQu9AmBL13tyGpxgg5ASt96WQ669p63rnJRWiAo9st8ns/0
->
-> Make sure to add your secrets to ensure your AI Agent works properly.
+```shell
+✓ Compiled successfully.
+  1.96 KB  dist/index.js
+Running command: npx thirdweb upload dist/index.js
+This may require you to log into thirdweb and will take some time to publish to IPFS...
+
+    $$\     $$\       $$\                 $$\                         $$\       
+    $$ |    $$ |      \__|                $$ |                        $$ |      
+  $$$$$$\   $$$$$$$\  $$\  $$$$$$\   $$$$$$$ |$$\  $$\  $$\  $$$$$$\  $$$$$$$\  
+  \_$$  _|  $$  __$$\ $$ |$$  __$$\ $$  __$$ |$$ | $$ | $$ |$$  __$$\ $$  __$$\ 
+    $$ |    $$ |  $$ |$$ |$$ |  \__|$$ /  $$ |$$ | $$ | $$ |$$$$$$$$ |$$ |  $$ |
+    $$ |$$\ $$ |  $$ |$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$   ____|$$ |  $$ |
+    \$$$$  |$$ |  $$ |$$ |$$ |      \$$$$$$$ |\$$$$$\$$$$  |\$$$$$$$\ $$$$$$$  |
+     \____/ \__|  \__|\__|\__|       \_______| \_____\____/  \_______|\_______/ 
+
+ 💎 thirdweb v0.14.12 💎
+
+- Uploading file to IPFS. This may take a while depending on file sizes.
+
+✔ Successfully uploaded file to IPFS.
+✔ Files stored at the following IPFS URI: ipfs://QmU6FXjVDoou96abqkBhWiCyXPhnYyfYwTWhEqbkwgU2Ue
+✔ Open this link to view your upload: https://bafybeicvoxeck6tzgt4aw5ruj4o4bitkuev3aidvqpcpgiur4rw37cw6r4.ipfs.cf-ipfs.com/
+
+AI Agent Contract deployed at: https://agents.phala.network/ipfs/QmU6FXjVDoou96abqkBhWiCyXPhnYyfYwTWhEqbkwgU2Ue
+
+Make sure to add your secrets to ensure your AI-Agent works properly. Use syntax:
+
+
+curl https://agents.phala.network/vaults -H 'Content-Type: application/json' -d '{"cid": "IPFS_CID", "data": {"openaiApiKey": "OPENAI_API_KEY"}}'
+```
 
 <details>
 <summary>New to thirdweb?</summary>
@@ -179,8 +193,8 @@ The steps to add a `secret` is simple. We will add the Anthropic API Key in this
 Then in your frame code, you will be able to access the secret key via `req.secret` object:
 
 ```js
-async function POST(req: Request): Promise<Response> {
-    const apiKey = req.secret?.apiKey
+async function GET(req: Request): Promise<Response> {
+    const apiKey = req.secret?.anthropicApiKey
 }
 ```
 
