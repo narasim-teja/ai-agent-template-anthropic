@@ -9,7 +9,7 @@
     "build": "phat-fn build --experimentalAsync",
     "test": "tsx src/test.ts",
     "lint": "tsc --noEmit",
-    "publish": "phat-fn build --experimentalAsync && tsx scripts/publish.ts"
+    "publish-agent": "phat-fn build --experimentalAsync && tsx scripts/publish.ts"
   },
   "devDependencies": {
     "@phala/fn": "^0.2.20",
