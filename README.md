@@ -118,7 +118,7 @@ Make sure to replace queries and secret with your values compatible with your AI
 
 Upload your compiled AI Agent code to IPFS.
 ```shell
-npm run publish
+npm run publish-agent
 ```
 
 Upon a successful upload, the command should show the URL to access your AI Agent.
