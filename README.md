@@ -7,12 +7,12 @@
   <p align="center">
     Host your AI Agent Contract on Phala's decentralized serverless cloud.
     <br />
-    <a href="https://github.com/Phala-Network/ai-agent-template-redpill"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Phala-Network/ai-agent-template-anthropic"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="QmQu9AmBL13tyGpxgg5ASt96WQ669p63rnJRWiAo9st8ns/0?key=c0c0105ba56276cd&chatQuery=When%20did%20humans%20land%20on%20the%20moon">View Demo</a>
     ·
-    <a href="https://github.com/Phala-Network/ai-agent-template-redpill/issues">Report Bug</a>
+    <a href="https://github.com/Phala-Network/ai-agent-template-anthropic/issues">Report Bug</a>
     ·
     <a href="https://discord.gg/DXGGJajW">Discord</a>
   </p>
@@ -44,9 +44,9 @@ npm install
 ```
 
 ### Testing Locally
-Create `.env` file and add your RedPill API Key
+Create `.env` file and add your Anthropic API Key
 ```shell
-cp .env.local .env
+cp .env.example .env
 ```
 Get an Anthropic API Key from [Anthropic](https://console.anthropic.com/login?returnTo=%2F%3F)
 
